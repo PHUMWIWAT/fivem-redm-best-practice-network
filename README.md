@@ -18,17 +18,27 @@ Agent workflow lives in `SKILL.md`. Deep facts live in `references/` and are loa
 
 ภาษาไทย: ใช้ skill นี้ตอนให้ agent ไล่ลด resmon หรือลดปริมาณ event/bytes บนเน็ตเวิร์ก FiveM/RedM — อย่าให้โหลดไฟล์ references ทุกไฟล์ทุกงาน
 
-## Install (Grok user skill)
+## Install
 
-Copy this folder to:
-
-```text
-%USERPROFILE%\.grok\skills\fivem-redm-performance-network\
+```bash
+npx skills add PHUMWIWAT/fivem-redm-best-practice-network --skill fivem-redm-performance-network -g -a grok
 ```
 
-Required files: `SKILL.md`, `references/*.md`. Skills reload from disk within a few seconds.
+ลงทุก agent ที่เครื่องเจอ (Claude / Cursor / Grok / …):
 
-This repo is the source of truth. After editing here, copy again to `~\.grok\skills\`.
+```bash
+npx skills add PHUMWIWAT/fivem-redm-best-practice-network --skill fivem-redm-performance-network -g
+```
+
+แค่ในโปรเจกต์นั้น (เช่น resource DX):
+
+```bash
+npx skills add PHUMWIWAT/fivem-redm-best-practice-network --skill fivem-redm-performance-network -a grok
+```
+
+Grok วางไฟล์ที่ `~/.grok/skills/` (`-g`) หรือ `.grok/skills/` ใน repo แล้วมี slash `/fivem-redm-performance-network`
+
+คัดลอกมือได้เช่นกัน: โฟลเดอร์นี้ทั้งก้อนไปที่ `%USERPROFILE%\.grok\skills\fivem-redm-performance-network\` (ต้องมี `SKILL.md` + `references/`).
 
 ## Not this skill
 
